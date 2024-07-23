@@ -54,7 +54,7 @@ jobs:
   steps:
   - task: AzureMLJobWaitTask@1
     inputs:
-      serviceConnection: $(service-connection)
-      resourceGroupName: $(resource-group)
-      azureMLWorkspaceName: $(workspace)
-      azureMLJobName: $(azureml_job_name_from_submit_job)
+      serviceConnection: 'UKDDC-SRE-DEMO'
+      resourceGroupName: 'alladis-sandbox-rg'
+      azureMLWorkspaceName: 'sa-ws-01'
+      azureMLJobName: 'ML-Job1'
