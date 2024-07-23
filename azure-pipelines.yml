@@ -60,4 +60,4 @@ jobs:
       serviceConnection: 'UKDDC-SRE-DEMO'
       resourceGroupName: 'alladis-sandbox-rg'
       azureMLWorkspaceName: 'sa-ws-01'
-      azureMLJobName: 'submit_azureml_job_task'
+      azureMLJobName: 'train_job'
