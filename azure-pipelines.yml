@@ -6,7 +6,7 @@ trigger:
 variables:
   service-connection: 'UKDDC-SRE-DEMO' # replace with your service connection name
   resource-group: 'alladis-sandbox-rg' # replace with your resource group name
-  workspace: 'docs-ws' # replace with your workspace name
+  workspace: 'sa-ws-01' # replace with your workspace name
 
 jobs:
 - job: SubmitAzureMLJob
@@ -42,3 +42,10 @@ jobs:
 
         # Set output variable for next task
         echo "##vso[task.setvariable variable=JOB_NAME;isOutput=true;]$job_name"
+
+- task: AzureMLJobWaitTask@1
+  inputs:
+    serviceConnection: 'UKDDC-SRE-DEMO'
+    resourceGroupName: 'alladis-sandbox-rg'
+    azureMLWorkspaceName: 'sa-ws-01'
+    azureMLJobName: 'Job_01'
