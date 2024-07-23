@@ -43,9 +43,9 @@ jobs:
         # Set output variable for next task
         echo "##vso[task.setvariable variable=JOB_NAME;isOutput=true;]$job_name"
 
-- task: AzureMLJobWaitTask@1
-  inputs:
-    serviceConnection: 'UKDDC-SRE-DEMO'
-    resourceGroupName: 'alladis-sandbox-rg'
-    azureMLWorkspaceName: 'sa-ws-01'
-    azureMLJobName: 'Job_01'
+  - task: AzureMLJobWaitTask@1
+    inputs:
+      serviceConnection: 'UKDDC-SRE-DEMO'
+      resourceGroupName: 'alladis-sandbox-rg'
+      azureMLWorkspaceName: 'sa-ws-01'
+      azureMLJobName: 'Job_01'
