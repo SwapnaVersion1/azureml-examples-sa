@@ -39,6 +39,7 @@ jobs:
       inlineScript: |
       
         # submit component job and get the run name
+        az ml compute create --name cpu-clustersa --size STANDARD_D2_V2 --max-instances 4 --min-instances 0 --type amlcompute --resource-group alladis-sandbox-rg --workspace-name sa-ws-01
         job_name=$(az ml job create --file single-job-pipeline.yml -g $(resource-group) -w $(workspace) --query name --output tsv)
 
         # Set output variable for next task
